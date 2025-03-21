@@ -20,6 +20,11 @@ jobs:
           pip install lazydocs
         shell: bash
 
+      - name: Create docs directory
+        run: |
+          mkdir -p ./docs/docstrings
+        shell: bash
+
       - name: Make script executable
         run: |
           cd scripts
