@@ -21,6 +21,7 @@ jobs:
         run: |
           cd scripts
           chmod +x generate-docs.sh
+        shell: bash
 
       - name: Run script
         run: |
@@ -32,4 +33,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./docs/docstrings  # Исправленный путь
