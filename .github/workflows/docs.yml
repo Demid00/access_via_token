@@ -6,20 +6,21 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+        - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
+        - name: Make script executable
+          run: |
+            cd scripts
+            chmod +x generate-docs.sh
 
-      - name: Run script
-        run: |
-          cd scripts
-          ./generate-docs.sh
-        shell: bash
+        - name: Run script
+          run: |
+            cd scripts
+            ./generate-docs.sh
+          shell: bash
 
-      - name: Деплой документации
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+        - name: Деплой документации
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./docs
