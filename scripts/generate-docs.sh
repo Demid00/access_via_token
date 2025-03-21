@@ -10,5 +10,3 @@ lazydocs \
   --src-base-url="https://github.com/Demid00/access_via_token/blob/master/" \
   src/
 
-# Дополнительные шаги, если необходимо (например, сборка сайта с помощью mkdocs)
-mkdocs build
