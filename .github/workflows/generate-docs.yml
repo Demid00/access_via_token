@@ -1,0 +1,24 @@
+name: Docs Generator
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [ published ]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Запуск кастомного Action
+        uses: ./scripts
+        with:
+          source-dir: 'src'
+          output-dir: 'docs'
+
+      - name: Деплой документации
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
