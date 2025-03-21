@@ -8,5 +8,5 @@ lazydocs \
   --output-path="../docs/docstrings" \
   --overview-file="../README.md" \
   --src-base-url="https://github.com/Demid00/access_via_token/blob/master/" \
-  src/ || echo "Ошибка при генерации документации"
+  src/
 
