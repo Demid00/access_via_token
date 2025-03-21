@@ -5,8 +5,8 @@ pip install lazydocs
 
 # Генерация документации
 lazydocs \
-  --output-path="../docs/docstrings" \
-  --overview-file="../README.md" \
-  --src-base-url="https://github.com/Demid00/access_via_token/blob/master/" \
-  ../git_homework3/
+  --output-path="./docs/docstrings" \
+  --overview-file="./README.md" \
+  --src-base-url="https://github.com/Demid00/git_homework3/blob/master/" \
+  .
 
